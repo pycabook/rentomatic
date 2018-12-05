@@ -24,3 +24,6 @@ class Room:
             'latitude': self.latitude,
             'longitude': self.longitude,
         }
+
+    def __eq__(self, other):
+        return self.to_dict() == other.to_dict()
