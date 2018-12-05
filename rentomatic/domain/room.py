@@ -15,3 +15,12 @@ class Room:
             latitude=adict['latitude'],
             longitude=adict['longitude'],
         )
+
+    def to_dict(self):
+        return {
+            'code': self.code,
+            'size': self.size,
+            'price': self.price,
+            'latitude': self.latitude,
+            'longitude': self.longitude,
+        }
