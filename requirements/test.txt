@@ -4,3 +4,8 @@ coverage
 pytest
 pytest-cov
 pytest-flask
+pytest-docker
+docker-compose
+pyyaml
+psycopg2
+sqlalchemy_utils
