@@ -28,6 +28,12 @@ def pytest_runtest_setup(item):
 @pytest.fixture(scope='session')
 def docker_setup(docker_ip):
     return {
+        'mongo': {
+            'dbname': 'rentomaticdb',
+            'user': 'root',
+            'password': 'rentomaticdb',
+            'host': docker_ip
+        },
         'postgres': {
             'dbname': 'rentomaticdb',
             'user': 'postgres',
@@ -56,6 +62,19 @@ def docker_compose_file(docker_tmpfile, docker_setup):
                 'environment': [
                     'POSTGRES_PASSWORD={}'.format(
                         docker_setup['postgres']['password']
+                    )
+                ]
+            },
+            'mongo': {
+                'restart': 'always',
+                'image': 'mongo',
+                'ports': ["27017:27017"],
+                'environment': [
+                    'MONGO_INITDB_ROOT_USERNAME={}'.format(
+                        docker_setup['mongo']['user']
+                    ),
+                    'MONGO_INITDB_ROOT_PASSWORD={}'.format(
+                        docker_setup['mongo']['password']
                     )
                 ]
             }
