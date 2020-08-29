@@ -49,7 +49,7 @@ def test_response_failure_contains_value(response_type, response_message):
         'type': response_type, 'message': response_message}
 
 
-def test_response_failure_initialisation_with_exception():
+def test_response_failure_initialisation_with_exception(response_type):
     response = res.ResponseFailure(
         response_type, Exception('Just an error message'))
 
