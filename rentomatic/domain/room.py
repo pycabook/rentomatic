@@ -9,3 +9,7 @@ class Room:
     price: int
     longitude: float
     latitude: float
+
+    @classmethod
+    def from_dict(self, d):
+        return self(**d)
