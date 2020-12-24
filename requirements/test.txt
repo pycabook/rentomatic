@@ -4,3 +4,4 @@ coverage
 pytest
 pytest-cov
 pytest-flask
+docker-compose
