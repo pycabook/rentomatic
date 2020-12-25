@@ -1,0 +1,34 @@
+[
+  {
+    "name": "FLASK_ENV",
+    "value": "production"
+  },
+  {
+    "name": "FLASK_CONFIG",
+    "value": "production"
+  },
+  {
+    "name": "POSTGRES_DB",
+    "value": "postgres"
+  },
+  {
+    "name": "POSTGRES_USER",
+    "value": "postgres"
+  },
+  {
+    "name": "POSTGRES_HOSTNAME",
+    "value": "localhost"
+  },
+  {
+    "name": "POSTGRES_PORT",
+    "value": "5432"
+  },
+  {
+    "name": "POSTGRES_PASSWORD",
+    "value": "postgres"
+  },
+  {
+    "name": "APPLICATION_DB",
+    "value": "application"
+  }
+]

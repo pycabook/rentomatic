@@ -2,3 +2,4 @@ Flask
 SQLAlchemy
 psycopg2
 pymongo
+gunicorn
