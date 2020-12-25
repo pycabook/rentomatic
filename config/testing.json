@@ -28,6 +28,22 @@
     "value": "postgres"
   },
   {
+    "name": "MONGODB_USER",
+    "value": "root"
+  },
+  {
+    "name": "MONGODB_HOSTNAME",
+    "value": "localhost"
+  },
+  {
+    "name": "MONGODB_PORT",
+    "value": "27018"
+  },
+  {
+    "name": "MONGODB_PASSWORD",
+    "value": "mongodb"
+  },
+  {
     "name": "APPLICATION_DB",
     "value": "test"
   }
