@@ -1,0 +1,3 @@
+[tool.black]
+line-length = 75
+target-version = ['py37']
