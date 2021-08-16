@@ -57,19 +57,21 @@ def test_repository_list_with_code_equal_filter(room_dicts):
     assert rooms[0].code == "fe2c3195-aeff-487a-a08f-e0bdc0ec6e9a"
 
 
-def test_repository_list_with_price_equal_filter(room_dicts):
+@pytest.mark.parametrize('price', [60, '60'])
+def test_repository_list_with_price_equal_filter(room_dicts, price):
     repo = MemRepo(room_dicts)
 
-    rooms = repo.list(filters={"price__eq": 60})
+    rooms = repo.list(filters={"price__eq": price})
 
     assert len(rooms) == 1
     assert rooms[0].code == "913694c6-435a-4366-ba0d-da5334a611b2"
 
 
-def test_repository_list_with_price_less_than_filter(room_dicts):
+@pytest.mark.parametrize('price', [60, '60'])
+def test_repository_list_with_price_less_than_filter(room_dicts, price):
     repo = MemRepo(room_dicts)
 
-    rooms = repo.list(filters={"price__lt": 60})
+    rooms = repo.list(filters={"price__lt": price})
 
     assert len(rooms) == 2
     assert set([r.code for r in rooms]) == {
@@ -78,10 +80,11 @@ def test_repository_list_with_price_less_than_filter(room_dicts):
     }
 
 
-def test_repository_list_with_price_greater_than_filter(room_dicts):
+@pytest.mark.parametrize('price', [48, '48'])
+def test_repository_list_with_price_greater_than_filter(room_dicts, price):
     repo = MemRepo(room_dicts)
 
-    rooms = repo.list(filters={"price__gt": 48})
+    rooms = repo.list(filters={"price__gt": price})
 
     assert len(rooms) == 2
     assert set([r.code for r in rooms]) == {
@@ -97,11 +100,3 @@ def test_repository_list_with_price_between_filter(room_dicts):
 
     assert len(rooms) == 1
     assert rooms[0].code == "913694c6-435a-4366-ba0d-da5334a611b2"
-
-
-def test_repository_list_price_as_strings(room_dicts):
-    repo = MemRepo(room_dicts)
-
-    repo.list(filters={"price__eq": "60"})
-    repo.list(filters={"price__lt": "60"})
-    repo.list(filters={"price__gt": "60"})
