@@ -116,6 +116,21 @@ def compose(subcommand):
 
 
 @cli.command()
+def init_postgres():
+    configure_app(os.getenv("APPLICATION_CONFIG"))
+
+    try:
+        run_sql([f"CREATE DATABASE {os.getenv('APPLICATION_DB')}"])
+    except psycopg2.errors.DuplicateDatabase:
+        print(
+            (
+                f"The database {os.getenv('APPLICATION_DB')} already",
+                "exists and will not be recreated",
+            )
+        )
+
+
+@cli.command()
 @click.argument("args", nargs=-1)
 def test(args):
     os.environ["APPLICATION_CONFIG"] = "testing"
