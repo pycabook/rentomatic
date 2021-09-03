@@ -10,3 +10,6 @@ You can download the book [here](https://leanpub.com/clean-architectures-in-pyth
 
 The repository contains the **code for the second edition** of the book. If for some reasons you are still following the first edition you can find the code in the branch `first-edition`. The tags mentioned in the first edition still exists in that branch.
 
+
+test it: $ pytest -svv --cov=rentomatic --cov-report=term-missing
+
