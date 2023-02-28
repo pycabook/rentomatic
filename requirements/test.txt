@@ -3,3 +3,5 @@ tox
 coverage
 pytest
 pytest-cov
+factory_boy
+Faker
