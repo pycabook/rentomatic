@@ -63,3 +63,4 @@ target/
 
 # Env files
 /src/.env
+/.idea/*
