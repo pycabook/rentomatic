@@ -32,7 +32,6 @@ def domain_rooms():
 @pytest.fixture
 def room_dicts(domain_rooms):
     result = [r.to_dict() for r in domain_rooms]
-    pprint(result, indent=2)
     return result
 
 
