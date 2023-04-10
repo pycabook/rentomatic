@@ -25,7 +25,7 @@ def pg_session_empty(app_configuration):
     yield session
 
     session.close()
-    connection.close
+    connection.close()
 
 
 @pytest.fixture(scope="session")
